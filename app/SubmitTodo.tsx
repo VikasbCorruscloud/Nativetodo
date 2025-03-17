@@ -11,7 +11,7 @@ const SubmitTodo = () => {
       {/* Add Task Button */}
       <TouchableOpacity
         onPress={() => setShowForm(true)}
-        className="bg-[#4884AE] h-[48px] w-[360px] rounded-lg  my-3 "
+        className="bg-[#4884AE] h-[48px]  rounded-lg  my-3 "
       >
         <Text className="text-[#FFFCFC] text-center py-4 font-semibold">
           Add Task
@@ -20,11 +20,11 @@ const SubmitTodo = () => {
 
       {/* Task Form */}
       {showForm && (
-        <View className=" ">
-          <View className="absolute bottom-0 left-0 right-0">
-            <View className="bg-white rounded-t-xl w-full h-[400px]">
+        <View className="  ">
+          <View className="absolute bottom-0 left-0 right-0 ">
+            <View className="bg-white rounded-t-xl  h-[400px]">
               {/* Header */}
-              <View className="flex-row justify-between items-center mb-4">
+              <View className="flex-row justify-between items-center mb-4 p-2">
                 <Text className="text-xl font-semibold">New Task</Text>
                 <TouchableOpacity
                   onPress={() => {
@@ -65,7 +65,7 @@ const SubmitTodo = () => {
                 </View>
 
                 {/* Submit Button */}
-                <TouchableOpacity className="bg-[#4884AE] h-[48px] w-[360px] rounded-lg my-6 ">
+                <TouchableOpacity className="bg-[#4884AE] h-[48px]  rounded-lg my-6 ">
                   <Text className="text-[#FFFCFC] text-center py-4 font-semibold">
                     Add Task
                   </Text>
