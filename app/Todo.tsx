@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, FlatList ,Pressable  } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  Pressable,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import SubmitTodo from "./SubmitTodo";
@@ -80,10 +86,11 @@ const Todo = () => {
           className=" h-[260px] "
           data={tasks}
           renderItem={({ item }) => (
-            <Pressable 
-            onPress={()=>setEditTask(item)}
-            className=" flex-row justify-between w-full p-3 items-center border h-[80px] border-[#E8E8E8] rounded-lg mt-2">
-              <View className="h-[80px] w-[8px] bg-[#80BBE6] absolute rounded-l-lg " />
+            <Pressable
+              onPress={() => setEditTask(item)}
+              className=" flex-row justify-between w-full p-3 items-center border h-[80px] border-[#E8E8E8] rounded-lg mt-2"
+            >
+              <View className="h-[80px] w-[8px] bg-[#80BBE6] absolute left-0 rounded-l-lg " />
               <View className="w-[300px] ml-4">
                 <Text>{item.title}</Text>
                 <Text className="text-[#8B8B8B]">{item.description}</Text>
@@ -103,7 +110,7 @@ const Todo = () => {
         data={completeTasks}
         renderItem={({ item }) => (
           <View className="flex-row justify-between w-full bg-[#EBEBEB] p-3 items-center border h-[80px] border-[#E8E8E8] rounded-lg mt-2">
-            <View className="h-[80px] w-[8px] bg-[#80BBE6] absolute rounded-l-lg " />
+            <View className="h-[80px] w-[8px] bg-[#80BBE6] left-0 absolute rounded-l-lg " />
             <View className="w-[300px] ml-4">
               <Text>{item.title}</Text>
               <Text className="text-[#8B8B8B]">{item.description}</Text>
@@ -118,11 +125,11 @@ const Todo = () => {
       />
 
       <SubmitTodo
-              setTasks={setTasks}
-              editTask={editTask}
-              editIndex={editIndex}
-              setEditTask={setEditTask}
-              setEditIndex={setEditIndex}
+        setTasks={setTasks}
+        editTask={editTask}
+        editIndex={editIndex}
+        setEditTask={setEditTask}
+        setEditIndex={setEditIndex}
       />
     </View>
   );

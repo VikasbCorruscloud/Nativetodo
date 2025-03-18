@@ -34,10 +34,10 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
       setShowForm(true);
     }
   }, [editTask]);
-  
+
   const handleSubmit = async () => {
     if (title.trim() === "") return;
-  
+
     if (editTask) {
       // Update existing task using ID instead of array index
       setTasks((prevTasks) =>
@@ -64,13 +64,12 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
         console.error("Error creating todo:", error);
       }
     }
-  
+
     // Reset form state
     setTitle("");
     setDescription("");
     setShowForm(false);
   };
-  
 
   return (
     <>
@@ -86,11 +85,11 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
 
       {/* Task Form */}
       {showForm && (
-        <View>
-          <View className="absolute bottom-0 left-0 right-0 ">
-            <View className="bg-white rounded-t-xl  h-[410px]">
+     
+          <View className=" h-screen flex-row items-end bottom-0 justify-center absolute w-screen bg-opacity-50 bg-[#000000]">
+            <View className="bg-white rounded-t-xl w-full p-2">
               {/* Header */}
-              <View className="flex-row justify-between items-center mb-4">
+              <View className="flex-row justify-between items-center p-1 mb-4">
                 <Text className="text-xl font-semibold">
                   {" "}
                   {editTask ? "Edit Task" : "New Task"}
@@ -129,7 +128,7 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
                     value={description}
                     onChangeText={setDescription}
                     placeholder="Enter the description of your task"
-                    className="border border-[#D7D7D7]  p-3 rounded-md"
+                    className="border  border-[#D7D7D7]  p-3 rounded-md"
                     multiline
                     style={{ height: 100, textAlignVertical: "top" }} // Ensures 4-line space
                   />
@@ -141,13 +140,13 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
                   className="bg-[#4884AE] h-[48px]  rounded-lg my-6 "
                 >
                   <Text className="text-[#FFFCFC] text-center py-4 font-semibold">
-                    Submit
+                    {editTask ? "Update Task" : "Submit"}
                   </Text>
                 </TouchableOpacity>
               </View>
             </View>
           </View>
-        </View>
+  
       )}
     </>
   );
