@@ -29,10 +29,17 @@ const Todo = () => {
         const response = await fetch(
           "https://training-backend-api.onrender.com/todos"
         );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
         console.log(data);
         setTasks(data.filter((todo: Todo) => !todo.completed));
         setCompleteTasks(data.filter((todo: Todo) => todo.completed));
+        const mockTodos: Todo[] = [
+          { id: 1, title: "Mock Task 1", description: "This is a mock task", completed: false },
+          { id: 2, title: "Mock Task 2", description: "This is another mock task", completed: true },
+        ];
       } catch (error) {
         console.error("Error fetching todos:", error);
       }
