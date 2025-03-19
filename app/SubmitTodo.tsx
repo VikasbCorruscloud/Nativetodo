@@ -39,7 +39,7 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
     if (title.trim() === "") return;
 
     if (editTask) {
-      // Update existing task using ID instead of array index
+      // Update existing task using ID 
       setTasks((prevTasks) =>
         prevTasks.map((t) =>
           t.id === editTask.id ? { ...t, title, description } : t
@@ -86,7 +86,7 @@ const SubmitTodo: React.FC<SubmitButtonProps> = ({
       {/* Task Form */}
       {showForm && (
      
-          <View className=" h-screen flex-row items-end bottom-0 justify-center absolute w-screen bg-opacity-50 bg-[#000000]">
+          <View className=" h-screen flex-row items-end bottom-0 justify-center absolute w-screen bg-opacity-25 bg-[#000000]">
             <View className="bg-white rounded-t-xl w-full p-2">
               {/* Header */}
               <View className="flex-row justify-between items-center p-1 mb-4">
